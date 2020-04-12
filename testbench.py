@@ -14,7 +14,15 @@ import matplotlib.pyplot as plt
 #     print(np.all(test_array_fntt == res))
 
 
-test_array = np.arange(1, 9, dtype=np.int64)
+# test_array = np.arange(1, 9, dtype=np.int64)
 # test_array = np.random.randint(0, 65537, 1024, dtype=np.int64)
-a = fntt.linear_conv(test_array, test_array, 17, 3)
+# a = fntt.linear_conv(test_array, test_array, 17, 3)
+
+test_arr_0 = np.random.randint(0, 65537, 256, dtype=np.int64)
+test_arr_1 = np.random.randint(0, 65537, 256, dtype=np.int64)
+print("test array 0:\n", test_arr_0)
+print("fntt:\n", fntt.fntt(test_arr_0, 65537, 3))
+print("test array 1:\n", test_arr_1)
+print("fntt:\n", fntt.fntt(test_arr_0, 65537, 3))
+print("negative wrapped conv:\n", fntt.linear_conv(test_arr_0, test_arr_1, 65537, 3))
 
